@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ actor.name }}</h1>
+
+<p>Altura: {{ actor.height }}</p>
+<p>Peso: {{ actor.mass }}</p>
+<p>Color de pelo: {{ actor.hair }}</p>
+<p>Color de piel: {{ actor.skin }}</p>
+<p>Color de ojos: {{ actor.eye }}</p>
+<p>Nacimiento: {{ actor.birth }}</p>
+<p>Genero: {{ actor.gender }}</p>
+<p>Planeta de origen: {{ actor.homeworld }}</p>
+
+
+<h3>Peliculas en que participa:</h3>
+{% for peli in films %}
+<p><a href="../film/?id={{ peli.id }}">{{ peli.title }}</a>,</p>
+{% endfor %}
+
+<h3>Naves:</h3>
+{% for ship in ships %}
+<p><a href="../ship/?id={{ ship.id }}">{{ ship.name }}</a>,</p>
+{% endfor %}
+
+{% endblock %}

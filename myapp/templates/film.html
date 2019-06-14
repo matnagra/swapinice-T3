@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ pelicula.title }}</h1>
+<p>Episode: {{ pelicula.episode_id }}</p>
+<h1>{{ pelicula.ano }}</h1>
+
+<p>{{ pelicula.opening }}</p>
+<p>Director: {{ pelicula.director }}</p>
+<p>Productor(es): {{ pelicula.producer }}</p>
+
+
+<h3>Actores:</h3>
+{% for actor in actores %}
+<p><a href="../actor/?id={{ actor.id }}">{{ actor.name }}</a>,</p>
+{% endfor %}
+
+<h3>Planetas:</h3>
+{% for planet in planets %}
+<p><a href="../planet/?id={{ planet.id }}">{{ planet.name }}</a>,</p>
+{% endfor %}
+
+<h3>Naves:</h3>
+{% for ship in ships %}
+<p><a href="../ship/?id={{ ship.id }}">{{ ship.name }}</a>,</p>
+{% endfor %}
+
+
+{% endblock %}

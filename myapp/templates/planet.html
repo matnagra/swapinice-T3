@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ planet.name }}</h1>
+
+<p>Periodo de rotación: {{ planet.rotation_period }}</p>
+<p>Periodo de orbitación: {{ planet.orbital_period }}</p>
+<p>Diametro: {{ planet.diameter }}</p>
+<p>Clima: {{ planet.climate }}</p>
+<p>Gravedad: {{ planet.gravity }}</p>
+<p>Terreno: {{ planet.terrain }}</p>
+<p>Agua superficial: {{ planet.surface_water }}</p>
+<p>Población: {{ planet.population }}</p>
+
+<h3>Peliculas:</h3>
+{% for film in films %}
+<p><a href="../film/?id={{ film.id }}">{{ film.title }}</a></p>
+{% endfor %}
+
+<h3>Residentes:</h3>
+{% for resident in residents %}
+<p><a href="../actor/?id={{ resident.id }}">{{ resident.name }}</a></p>
+{% endfor %}
+
+{% endblock %}

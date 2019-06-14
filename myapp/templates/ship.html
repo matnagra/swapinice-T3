@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ ship.name }}</h1>
+
+<p>Modelo: {{ ship.model }}</p>
+<p>Manufactuador: {{ ship.manufacturer }}</p>
+<p>Costo [creditos]: {{ ship.cost_in_credits }}</p>
+<p>Longitud: {{ ship.length }}</p>
+<p>Maxima velocidad atmosferica: {{ ship.max_atmosphering_speed }}</p>
+<p>Tripulación: {{ ship.crew }}</p>
+<p>Pasajeros: {{ ship.passengers }}</p>
+<p>Capacidad cargo: {{ ship.cargo_capacity }}</p>
+<p>Duración (consumables): {{ ship.cargo_capacity }}</p>
+<p>Rating hiperimpulsor: {{ ship.hyperdrive_rating }}</p>
+<p>MGLT: {{ ship.mglt }}</p>
+<p>Clase de Nave: {{ ship.starship_class }}</p>
+
+<h3>Pilotos:</h3>
+{% for pilot in pilots %}
+<p><a href="../actor/?id={{ pilot.id }}">{{ pilot.name }}</a></p>
+{% endfor %}
+
+<h3>Peliculas en que aparece:</h3>
+{% for peli in films %}
+<p><a href="../film/?id={{ peli.id }}">{{ peli.title }}</a>,</p>
+{% endfor %}
+
+{% endblock %}

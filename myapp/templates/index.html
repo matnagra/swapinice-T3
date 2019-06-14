@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Peliculas StarWars</h1>
+
+ <table>
+  <tr>
+    <th>Nro episodio</th>
+    <th>Nombre</th>
+    <th>Año lanzamiento</th>
+    <th>Director</th>
+    <th>Productor(es)</th>
+  </tr>
+     {% for peli in data %}
+          <tr>
+            <td>{{ peli.episode_id }}</td>
+              <td><a href="film/?id={{ peli.id }}">{{ peli.title }}</a></td>
+            <td>{{ peli.ano }}</td>
+            <td>{{ peli.director }}</td>
+            <td>{{ peli.producer }}</td>
+          </tr>
+     {% endfor %}
+</table>
+
+
+{% endblock %}

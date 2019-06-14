@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Resultados busqueda</h1>
+
+{% if selection == "films" or selection == "all" %}
+<h3>Peliculas - {{ films_result|length }} coincidencias</h3>
+{% for elem in films_result %}
+<p><a href="../film/?url={{ elem.url }}">{{ elem.name }}</a></p>
+{% endfor %}
+{% endif %}
+
+{% if selection == "people" or selection == "all" %}
+<h3>Personas - {{ people_result|length }} coincidencias</h3>
+{% for elem in people_result %}
+<p><a href="../actor/?url={{ elem.url }}">{{ elem.name }}</a></p>
+{% endfor %}
+{% endif %}
+
+{% if selection == "starships" or selection == "all" %}
+<h3>Naves - {{ starships_result|length }} coincidencias</h3>
+{% for elem in starships_result %}
+<p><a href="../ship/?url={{ elem.url }}">{{ elem.name }}</a></p>
+{% endfor %}
+{% endif %}
+
+{% if selection == "planets" or selection == "all" %}
+<h3>Planetas - {{ planets_result|length }} coincidencias</h3>
+{% for elem in planets_result %}
+<p><a href="../planet/?url={{ elem.url }}">{{ elem.name }}</a></p>
+{% endfor %}
+{% endif %}
+
+
+{% endblock %}
