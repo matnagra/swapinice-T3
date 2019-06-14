@@ -23,6 +23,5 @@ urlpatterns = [
     path('film/', views.film),
     path('actor/', views.actor),
     path('ship/', views.ship),
-    path('planet/', views.planet),
-    path('search/', views.search),
+    path('planet/', views.planet)
 ]
